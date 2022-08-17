@@ -1,0 +1,29 @@
+¿QUÉ ES UNA BASE DE DATOS?
+Es una herramienta para la recolección y la organización de la información.
+
+Cada registro en la BD es una fila con campos separados en columnas que definen sus características.
+Una lista de registros representa una tabla.
+Todas las tablas dentro de la BD contienen datos relacionados entre sí.
+
+Para poder interactuar con una BD se utiliza un Sistema de Gestión de Bases de Datos (SGBD O DBMS).
+Algunos ejemplos son Microsoft SQL Server, Postgre SQL y MySQL.
+
+
+
+SQL
+Es un lenguaje para manipular y comunicar información almacenada en las BD relacionales.
+Su sintaxis está integrada por:
+    * Lenguaje de Definición de Datos (LDD).
+        Permite definir estructuras para almacenar los datos.
+
+    * Lenguaje de Manipulación de Datos (LMD).
+        Permite insertar y modificar los datos.
+
+    * Lenguaje de Control de Datos (LCD).
+        Permite al administrador manejar el acceso a la BD.
+
+
+
+BD RELACIONAL
+Es aquella donde todas las tablas tienen un campo que sirve como identificador único para cada registro.
+Este identificadorpermite relaciones predefinidad entre todas las tablas.

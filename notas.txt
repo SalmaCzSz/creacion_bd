@@ -14,7 +14,10 @@ SQL
 Es un lenguaje para manipular y comunicar información almacenada en las BD relacionales.
 Su sintaxis está integrada por:
     * Lenguaje de Definición de Datos (LDD).
-        Permite definir estructuras para almacenar los datos.
+        Permite definir y modificar las estructuras (tablas, índices, vistas y permisos) para almacenar los datos.
+        - Crear: La sentencia incluye el verbo CREATE.
+        - Eliminar: La sentencia incluye el verbo DROP.
+        - Modificar: La sentencia incluye el verbo ALTER.
 
     * Lenguaje de Manipulación de Datos (LMD).
         Permite insertar y modificar los datos.
@@ -26,4 +29,28 @@ Su sintaxis está integrada por:
 
 BD RELACIONAL
 Es aquella donde todas las tablas tienen un campo que sirve como identificador único para cada registro.
-Este identificadorpermite relaciones predefinidad entre todas las tablas.
+Este identificador permite relaciones predefinidad entre todas las tablas.
+
+
+
+DATOS
+Son representaciones de atributos (mediciones, identificadores o descripciones).
+Pueden ser cualitativos (indican categorias no medibles) o cuantitativos (mediciones de los atributos).
+
+En SQL hay tres tipos principales de datos: numéricos, hilos de caracteres y fecha y tiempo.
+El tipo de dato de un campo va a determinar los valores que esta puede tomar.
+
+
+
+PRIMARY KEY
+Es un identificador único y no nulo que identifica un registro en la BD.
+También sirve para relacionar filas entre diferentes tablas.
+La PK puede estar conformada por uno o más campos.
+
+
+
+FOREIGN KEY
+Establece un vínculo con la PK de otra tabla.
+La tabla qu contiene la FK es llamada tabla hija y la tabla que contiene la PK es llamada tabla madre.
+Existe para prevenir acciones que destruyan las relaciones entre las tablas.
+

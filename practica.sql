@@ -114,3 +114,21 @@
     DESC GRUPO_2;
 
     ALTER TABLE GRUPO_1 DROP FOREIGN KEY FK_ZONASID;
+
+
+
+# AGREGAR Y QUITAR UNIQUE CONSTRAINT (restricciones para valores unicos en las columnas)
+    # ALTER TABLE <nombre tabla> ADD CONSTRAINT <nombre restriccion> UNIQUE (<nombre columna>);
+    # ALTER TABLE <nombre tabla> DROP INDEX <nombre columna>;
+
+    DESC GRUPO1_1;
+    ALTER TABLE GRUPO_1 ADD CONSTRAINT U_NOMBRE UNIQUE (NOMBRE);
+
+    CREATE TABLE GRUPO_3 (
+        ID INT NOT NULL,
+        DIR_ID INT NOT NULL,
+        PRIMARY KEY (ID),
+        UNIQUE (DIR_ID)
+    );
+
+    ALTER TABLE GRUPO_1 DROP INDEX U_NOMBRE;

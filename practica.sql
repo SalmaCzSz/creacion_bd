@@ -47,3 +47,40 @@
     TRUNCATE TABLE KOI;
 
     SELECT * FROM KOI;
+
+
+
+# AGREGAR Y QUITAR PK ADD
+    # ALTER TABLE <nombre tabla> ADD PRIMARY KEY (<nombre columna>);
+    # ALTER TABLE <nombre tabla> DROP PRIMARY KEY;
+
+    # CREATE TABLE <nombre tabla>(
+        # <nombre columna> <tipo de dato> NOT NULL,
+        # ...
+        # PRIMARY KEY (<nombre columna>)
+        #);
+
+    CREATE DATABASE GRUPOS;
+    USE GRUPOS;
+
+    CREATE TABLE ZONAS(
+        ID INT NOT NULL,
+        DIR_COD INT NOT NULL,
+        DIR VARCHAR(20),
+        NOMBRE VARCHAR(20)
+    );
+    DESC ZONAS;
+
+    ALTER TABLE ZONAS ADD PRIMARY KEY (ID);
+    DESC ZONAS;
+
+    CREATE TABLE GRUPO_1(
+        ID INT NOT NULL,
+        NOMBRE VARCHAR(20)
+        DIR_COD INT NOT NULL,
+        PRIMARY KEY (ID)
+    );
+    DESC GRUPO_1;
+    
+    ALTER TABLE ZONAS DROP PRIMARY KEY;
+    DESC ZONAS;

@@ -50,7 +50,7 @@
 
 
 
-# AGREGAR Y QUITAR PK ADD
+# AGREGAR Y QUITAR PK
     # ALTER TABLE <nombre tabla> ADD PRIMARY KEY (<nombre columna>);
     # ALTER TABLE <nombre tabla> DROP PRIMARY KEY;
 
@@ -58,7 +58,7 @@
         # <nombre columna> <tipo de dato> NOT NULL,
         # ...
         # PRIMARY KEY (<nombre columna>)
-        #);
+    # );
 
     CREATE DATABASE GRUPOS;
     USE GRUPOS;
@@ -84,3 +84,33 @@
     
     ALTER TABLE ZONAS DROP PRIMARY KEY;
     DESC ZONAS;
+
+
+
+# AGREGAR Y QUITAR FK
+    # ALTER TABLE <nombre tabla hija> ADD CONSTRAINT <nombre restriccion> FOREIGN KEY (<nombre columna>) REFERENCES <nombre tabla madre>;
+    # ALTER TABLE <nombre tabla hija> DROP FOREIGN KEY;
+
+    # CREATE TABLE <nombre tabla hija>(
+        # <nombre columna> <tipo de dato> NOT NULL,
+        # ...
+        # PRIMARY KEY (<nombre columna>),
+        # FOREIGN KEY (<nombre columna>) REFERENCES <nombre tabla madre>;
+    # );
+
+    DESCRIBE ZONAS;
+    DESC GRUPO_1;
+
+    ALTER TABLE GRUPO_1 ADD CONSTRAINT FK_ZONASID FOREIGN KEY (DIR_COD) REFERENCES ZONAS(ID);
+    DESC GRUPO_1;
+
+    CREATE TABLE GRUPO_1(
+        ID INT NOT NULL,
+        NOMBRE VARCHAR(20)
+        DIR_COD INT NOT NULL,
+        PRIMARY KEY (ID),
+        FOREIGN KEY (DIR_COD) REFERENCES ZONAS(ID)
+    );
+    DESC GRUPO_2;
+
+    ALTER TABLE GRUPO_1 DROP FOREIGN KEY FK_ZONASID;

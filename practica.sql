@@ -121,7 +121,7 @@
     # ALTER TABLE <nombre tabla> ADD CONSTRAINT <nombre restriccion> UNIQUE (<nombre columna>);
     # ALTER TABLE <nombre tabla> DROP INDEX <nombre columna>;
 
-    DESC GRUPO1_1;
+    DESC GRUPO_1;
     ALTER TABLE GRUPO_1 ADD CONSTRAINT U_NOMBRE UNIQUE (NOMBRE);
 
     CREATE TABLE GRUPO_3 (
@@ -132,3 +132,14 @@
     );
 
     ALTER TABLE GRUPO_1 DROP INDEX U_NOMBRE;
+
+
+
+# CAMBIAR NOMBRE DE UNA COLUMNA
+    # ALTER TABLE <nombre tabla> CHANGE <nombre actual columna> <nombre nuevo columna> <tipo de dato>;
+
+    USE GRUPOS;
+    DESC GRUPO_1;
+
+    SELECT * FROM GRUPO_1;
+    ALTER TABLE GRUPO_1 CHANGE NOMBRE APELLIDO VARCHAR(8);

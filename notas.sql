@@ -1,4 +1,4 @@
-# I M P O R T A N T 
+# I M P O R T A N T E
 # PARA ESTA PRÁCTICA SE UTILIZA MySQL Workbench
 
 
@@ -154,3 +154,89 @@
 
     ALTER TABLE GRUPO_2 MODIFY NOMBRE CHAR(12);    
     DESCRIBE GRUPO_2;
+
+
+
+
+
+# L E N G U A J E  D E  M A N I P U L A C I Ó N  D E  D A T O S #
+
+# INSERTAR DATOS
+    CREATE DATABASE BODEGA;
+    USE BODEGA;
+
+    CREATE TABLE PRODUCTOS(
+        ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        NOMBRE VARCHAR(28),
+        PRECIO FLOAT, 
+        PROVEEDOR VARCHAR(28)
+    );
+
+    DESC PRODUCTOS;
+    SELECT * FROM PRODUCTOS;
+
+    INSERT INTO PRODUCTOS (NOMBRE, PRECIO, PROVEEDOR) VALUES ('Café', 3.99, 'Lucky_Lucas_CA');
+    SELECT * FROM PRODUCTOS;
+
+    INSERT INTO PRODUCTOS (NOMBRE, PRECIO, PROVEEDOR) VALUES ('Harina de trigo', 1.75, 'El_horno_de_Atenas'),
+                                                             ('Gaseosa', 1.50, 'Yorgelis_2007');
+                                                                 
+    INSERT INTO PRODUCTOS (NOMBRE, PRECIO, PROVEEDOR) VALUES ('Mantequilla', 2, 'Milanat'),
+                                                             ('Galletas de vainilla', 2, 'Delicias_Xionamara'),
+                                                             ('Encendedores', 0.9, 'Lucky_Lucas_CA'),
+                                                             ('Leche', 0.9, 'Milanat'),
+                                                             ('Gomitas', 0.9, 'Chuchu_ElDulce');
+
+
+
+# ACTUALIZAR DATOS
+    USE BODEGA;
+    SELECT * FROM PRODUCTOS;
+
+    UPDATE PRODUCTOS SET PROVEEDOR = 'Moltisanti_CA' WHERE ID = 1;
+    SELECT * FROM PRODUCTOS;
+
+    # ACTUALIZAR MÁS DE UNA COLUMNA A LA VEZ
+    SET SQL_SAFE_UPDATES = 0; # ESTO CAMBIA LA CONFIGURACIÓN PARA UTILIZAR OTROS CAMBIOS COMO CONDICIÓN
+
+    UPDATE PRODUCTOS SET PRECIO = 0.9, PROVEEDOR = 'Milanat' WHERE NOMBRE = 'Gaseosa';
+    SELECT * FROM PRODUCTOS;
+
+    # ACTUALIZAR DOS FILAS A LA VEZ
+    UPDATE PRODUCTOS SET PROVEEDOR = 'Moltisanti_CA' WHERE PROVEEDOR = 'Lucky_Lucas_CA';
+    SELECT * FROM PRODUCTOS;
+
+
+
+# BORRAR DATOS
+    USE BODEGA;
+        
+    CREATE TABLE PERSONAS(
+        ID INT AUTO_INCREMENT PRIMARY KEY,
+        NOMBRE VARCHAR(20),
+        EDAD INT, 
+        PAIS VARCHAR(20)
+    );
+
+    SELECT * FROM PERSONAS;
+
+    INSERT INTO PERSONAS (NOMBRE, EDAD, PAIS) VALUES ('Sergio', 20, 'Cuba'),
+                                                     ('Jenny', 24, 'Argentina'),
+                                                     ('Rafael', 22, 'México'),
+                                                     ('Furiyel', 23, 'Venezuela'),
+                                                     ('Berengenio', 19, 'Colombia'),
+                                                     ('Joana', 22, 'Mexico');
+
+    # ELIMINAR UNA FILA
+    DELETE FROM PERSONAS WHERE NOMBRE = 'Furiyel';
+    SELECT * FROM PERSONAS;
+
+    # ELIMIANR VARIAS FILAS
+    DELETE FROM PERSONAS WHERE PAIS = 'México';
+    SELECT * FROM PERSONAS;
+
+    # ELIMINAR TODAS LAS FILAS
+    DELETE FROM PERSONAS;
+    SELECT * FROM PERSONAS;
+
+

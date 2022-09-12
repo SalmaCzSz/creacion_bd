@@ -240,3 +240,35 @@
     SELECT * FROM PERSONAS;
 
 
+
+
+# CONSTRAINTS
+    USE BODEGA;
+
+    CREATE TABLE EMPLEADOS(
+        IN INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        APELLIDO VARCHAR(28),
+        NOMBRE VARCHAR(28),
+        EDAD INT NOT NULL,
+        LOCAL_NOMBRE VARCHAR(28) DEFAULT 'Los procederes',
+        CONSTRAINT CK_EDAD CHECK (EDAD >= 18)
+    );
+
+    DESC EMPLEADOS;
+
+    INSERT INTO EMPLEADOS (APELLIDO, NOMBRE, EDAD) VALUES ('Tantamo', 'Ernesto', 23),
+                                                          ('Pozo', 'Alejandra', 20);
+
+    SELECT * FROM EMPLEADOS;
+
+    INSERT INTO EMPLEADOS (APELLIDO, NOMBRE, EDAD) VALUES ('Borgia', 'Juan', 15);
+
+    SELECT * FROM EMPLEADOS;
+
+    ALTER TABLE EMPLEADOS ALTER EDAD SET DEFAULT 19;
+
+    INSERT INTO EMPLEADOS (APELLIDO, NOMBRE) VALUES ('Borgia', 'Juan');
+
+    SELECT * FROM EMPLEADOS;
+                                                          
+                                                          

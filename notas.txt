@@ -54,3 +54,57 @@ Establece un vínculo con la PK de otra tabla.
 La tabla qu contiene la FK es llamada tabla hija y la tabla que contiene la PK es llamada tabla madre.
 Existe para prevenir acciones que destruyan las relaciones entre las tablas.
 
+
+
+
+
+DISEÑO DE UNA BD
+NORMALIZAR
+Es el proceso de organizar los datos eficientemente dentro de una BD.
+En cada tabla se desea:
+    * Conservar los datos relacionados entre sí y reubicar los datos no relacionados en otra tabla.
+    * Eliminar datos redundantes.
+
+Beneficios:
+    * Reducir espacio de almacenamiento.
+    * Reducir anomalías de LMD.
+    * Mejorar el desempeño general de las consultas.
+
+PRIMERA FORMA NORMAL
+Una tabla sigue la primera forma normal si:
+    * Ninguna fila de datos está repetida.
+    * Cada columna contiene un valor único.
+    * La tabla tiene una PK.
+
+SEGUNDA FORMA NORMAL
+Una tabla sigue la segunda forma normal si:
+    * Sigue las reglas de la primera forma normal.
+    * Toda columna que no es PK es dependiente de la PK entera.
+
+TERCERA FORMA NORMAL
+Una tabla sigue la tercera forma normal si:
+    * Sigue las reglas de la segunda forma normal.
+    * Toda columna no primaria (no forma parte de la PK) no depende de otra columna no primaria.
+
+RELACIONES
+En un sistema las tablas están relacionadas entre si gracias a las PK y FK.
+En las relaciones las columnas están vinculadas y restringidas entre si.
+
+RELACIÓN 1 A 1
+Se da cuando la KEY de una tabla aparece no más de una vez como KEY en otra tabla y viceversa.
+
+RELACIÓN 1 A N
+Se da cuando los valores de la PK de una tabla puede estar en múltiples filas de una FK en otra tabla.
+
+RELACIÓN N A N
+Se da cuando dos tablas pueden tener múltiples instancias de sí mismas.
+Para esta relación es necesario crear una tabla adicional.
+
+CONSTRAINTS
+Son restricciones que se colocan a las columnas dentro de las tablas.
+Restringen los datos que pueden ser insertados en la columna.
+Ejemplos:
+    * NOT NULL      * CHECK
+    * UNIQUE        * DEFAULT
+    * PK
+    * FK
